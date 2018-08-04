@@ -2,7 +2,7 @@
 [ ![Codeship Status for ErickWendel/mixmax-starwars-slash-command](https://app.codeship.com/projects/cd24b640-79d9-0136-7943-1a1745bf82cc/status?branch=master)](https://app.codeship.com/projects/300585)
 
 
-This is an open source Mixmax Slash Command. See <https://lzssmvqj3f.execute-api.us-east-1.amazonaws.com/dev> for more information about how to use this example code in Mixmax.
+This is an open source Mixmax Slash Command. See <https://app.swaggerhub.com/apis/ErickWendel/starwars-slash-command/0.1> for more information about how to use this example code in Mixmax.
 
 For a more complex example using multi-word search, see [Soundcloud command](https://github.com/simonxca/mixmax-soundcloud-slash-command).
 
