@@ -9,8 +9,8 @@ For a more complex example using multi-word search, see [Soundcloud command](htt
 ## Testing
 1. `npm test`
 ## Development URLs
- - https://lzssmvqj3f.execute-api.us-east-1.amazonaws.com/dev/typeahead
- - https://lzssmvqj3f.execute-api.us-east-1.amazonaws.com/dev/resolver
+  `GET` - https://a2dd4hapxd.execute-api.us-east-1.amazonaws.com/prod/resolver <br/>
+  `GET` - https://a2dd4hapxd.execute-api.us-east-1.amazonaws.com/prod/typeahead
  
 ## Running locally
 
