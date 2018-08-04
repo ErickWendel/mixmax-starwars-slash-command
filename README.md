@@ -1,4 +1,6 @@
 # Star Wars Slash Command for Mixmax
+[ ![Codeship Status for ErickWendel/mixmax-starwars-slash-command](https://app.codeship.com/projects/cd24b640-79d9-0136-7943-1a1745bf82cc/status?branch=master)](https://app.codeship.com/projects/300585)
+
 
 This is an open source Mixmax Slash Command. See <https://lzssmvqj3f.execute-api.us-east-1.amazonaws.com/dev> for more information about how to use this example code in Mixmax.
 
