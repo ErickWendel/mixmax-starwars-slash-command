@@ -11,14 +11,13 @@ const queryStringParameters: MixMaxRequest = {
   user: 'erick.workspace@gmail.com',
   timezone: 'America/Los_Angeles',
 };
-
+const { text } = queryStringParameters;
 let apiResult: ResolverResponse = null;
 // tslint:disable-next-line:ter-prefer-arrow-callback
 // tslint:disable-next-line:space-before-function-paren
 describe('Resolver mappings ', function() {
   this.timeout(5000);
   this.beforeAll(async () => {
-    const { text } = queryStringParameters;
     apiResult = await Resolver.resolve(text);
   });
 
@@ -30,11 +29,10 @@ describe('Resolver mappings ', function() {
     assert.ok(apiResult.body.length > 4);
   });
 
-  it('should contain the R2-D2 name when passed r2', async () => {
+  it(`should contain the R2-D2 name when passed ${text}`, async () => {
     assert.ok(apiResult.body.includes('R2-D2'));
   });
-  it('should contain the R2-D2 name and HTML template when passed r2', async () => {
-    const { text } = queryStringParameters;
+  it(`should contain the R2-D2 name and HTML template when passed ${text}`, async () => {
     const expected = {
       body:
         // tslint:disable-next-line:max-line-length
