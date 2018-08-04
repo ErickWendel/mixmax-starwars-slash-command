@@ -9,7 +9,7 @@ export class Resolver {
       'https://www.geek.com/wp-content/uploads/2018/01/star-wars-625x352.jpg';
 
     return [
-      `<br/><img src="${defaultAvatar}" />`,
+      `<br/><img src="${defaultAvatar}" width="300" />`,
       `<br/><strong>Name</strong>: ${item.name}`,
       `<br/><strong>Gender</strong>: ${item.gender}`,
     ].join('');

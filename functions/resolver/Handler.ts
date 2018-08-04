@@ -3,7 +3,6 @@ import { Resolver } from './src/Resolver';
 import { variables } from './../_shared/Util/Constants';
 
 const handler = async ({ queryStringParameters }) => {
-  console.log('event.queryStringParameters', queryStringParameters);
   if (!queryStringParameters) {
     return variables.DEFAULT_RESPONSE_ENTER_SEARCH_TERM;
   }

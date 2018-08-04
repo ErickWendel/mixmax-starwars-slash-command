@@ -4,7 +4,7 @@
   "description": "Serverless webpack example using Typescript",
   "main": "handler.js",
   "scripts": {
-    "dev": "serverless invoke local -f",
+    "preinstall": "npm i -g serverless",
     "test": "ts-mocha -p . functions/**/**/*.test.ts"
   },
   "dependencies": {
