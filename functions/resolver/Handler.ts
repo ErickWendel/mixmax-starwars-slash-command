@@ -1,11 +1,11 @@
 import { APIGatewayEvent, Callback, Context, Handler } from 'aws-lambda';
 import { Resolver } from './src/Resolver';
-import { util } from './../_shared/Util';
+import { util } from './../_shared/Util/Util';
 
 const handler = async ({ queryStringParameters }) => {
   console.log('event.queryStringParameters', queryStringParameters);
   if (!queryStringParameters) {
-    return util.envirounment.DEFAULT_RESPONSE_ENTER_SEARCH_TERM;
+    return util.DEFAULT_RESPONSE_ENTER_SEARCH_TERM;
   }
 
   const text = queryStringParameters.text || queryStringParameters;
@@ -14,7 +14,7 @@ const handler = async ({ queryStringParameters }) => {
   return result;
 };
 
-export const hello: Handler = (
+export const main: Handler = (
   event: APIGatewayEvent,
   context: Context,
   cb: Callback,
@@ -24,7 +24,7 @@ export const hello: Handler = (
   handler(event)
     .then((result: any) => {
       const response = {
-        ...util.envirounment.DEFAULT_RESPONSE,
+        ...util.DEFAULT_RESPONSE,
         body: JSON.stringify(result),
       };
       console.log('**RESULT', response);

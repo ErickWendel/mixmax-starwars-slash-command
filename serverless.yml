@@ -10,7 +10,7 @@ provider:
 
 functions:
   resolver:
-    handler: functions/resolver/Handler.hello
+    handler: functions/resolver/Handler.main
     events:
       - http:
           cors: 
@@ -19,7 +19,7 @@ functions:
           path: resolver
 
   typeahead:
-      handler: functions/typeahead/Handler.hello
+      handler: functions/typeahead/Handler.main
       events:
         - http:
             cors: 

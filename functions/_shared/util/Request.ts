@@ -2,19 +2,19 @@ import * as ax from 'axios';
 // strange behavior with axios
 // tslint:disable-next-line:no-duplicate-imports
 import { AxiosPromise } from 'axios';
+import { util } from './Util';
 
 const {
   default: { get },
 } = ax;
 
-const defaultTimeout = 2000;
 const errorTimeout = (reject, urlRequest: string) =>
   reject(new Error(`timeout at [${urlRequest}] :(`));
 
 export class Request<T> {
   private raceTimeoutDelay(fnName) {
     return new Promise((resolve, reject) =>
-      setTimeout(() => errorTimeout(reject, fnName), defaultTimeout),
+      setTimeout(() => errorTimeout(reject, fnName), util.DEFAULT_TIMEOUT),
     );
   }
 

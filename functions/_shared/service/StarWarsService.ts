@@ -1,8 +1,8 @@
-import { util } from '../../_shared/Util';
+import { util } from '../../_shared/Util/Util';
 
-import { Request } from '../../_shared/Request';
+import { Request } from '../../_shared/Util/Request';
 const request = new Request<Response>();
-import { Response } from '../../_shared/StarWarsResponse';
+import { Response } from '../../_shared/DTO/StarWarsResponse';
 
 export class StarWarsService {
   static async getPeople(term): Promise<Response> {
