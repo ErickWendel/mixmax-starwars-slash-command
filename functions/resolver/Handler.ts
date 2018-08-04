@@ -1,10 +1,10 @@
 import { APIGatewayEvent, Callback, Context, Handler } from 'aws-lambda';
 import { Resolver } from './src/Resolver';
-import { variables } from './../_shared/Util/Constants';
+import { constants } from './../_shared/Util/Constants';
 
 const handler = async ({ queryStringParameters }) => {
   if (!queryStringParameters) {
-    return variables.DEFAULT_RESPONSE_ENTER_SEARCH_TERM;
+    return constants.DEFAULT_RESPONSE_ENTER_SEARCH_TERM;
   }
 
   const text = queryStringParameters.text || queryStringParameters;
@@ -23,7 +23,7 @@ export const main: Handler = (
   handler(event)
     .then((result: any) => {
       const response = {
-        ...variables.DEFAULT_RESPONSE,
+        ...constants.DEFAULT_RESPONSE,
         body: JSON.stringify(result),
       };
       console.log('**RESULT', response);

@@ -2,7 +2,7 @@ import * as ax from 'axios';
 // strange behavior with axios
 // tslint:disable-next-line:no-duplicate-imports
 import { AxiosPromise } from 'axios';
-import { variables } from './Constants';
+import { constants } from './Constants';
 
 const {
   default: { get },
@@ -14,7 +14,7 @@ const errorTimeout = (reject, urlRequest: string) =>
 export class Request<T> {
   private raceTimeoutDelay(fnName) {
     return new Promise((resolve, reject) =>
-      setTimeout(() => errorTimeout(reject, fnName), variables.DEFAULT_TIMEOUT),
+      setTimeout(() => errorTimeout(reject, fnName), constants.DEFAULT_TIMEOUT),
     );
   }
 

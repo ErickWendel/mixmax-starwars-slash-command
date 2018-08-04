@@ -1,8 +1,8 @@
 import * as assert from 'assert';
-import { variables } from './../util/Constants';
+import { constants } from './../util/Constants';
 import { Request } from './Request';
 
-const timeout = variables.DEFAULT_TIMEOUT;
+const timeout = constants.DEFAULT_TIMEOUT;
 const request = new Request<any>();
 // tslint:disable-next-line:ter-prefer-arrow-callback
 // tslint:disable-next-line:space-before-function-paren

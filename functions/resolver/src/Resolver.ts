@@ -1,7 +1,7 @@
 import { StarWarsService } from '../../_shared/service/StarWarsService';
 import { People } from '../../_shared/DTO/StarWarsResponse';
 import { ResolverResponse } from '../../_shared/DTO/MixMaxResponse';
-import { variables } from '../../_shared/util/Constants';
+import { constants } from '../../_shared/util/Constants';
 
 export class Resolver {
   static toHtmlTemplate(item: People) {
@@ -19,7 +19,7 @@ export class Resolver {
 
     if (!results.length) {
       return {
-        body: variables.DEFAULT_RESPONSE_NOT_FOUND_ITEM.map(
+        body: constants.DEFAULT_RESPONSE_NOT_FOUND_ITEM.map(
           item => item.title,
         ).join(''),
       };

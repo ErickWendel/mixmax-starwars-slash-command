@@ -2,7 +2,7 @@ import * as assert from 'assert';
 import { Typeahead } from './Typeahead';
 import { MixMaxRequest } from '../../_shared/DTO/MixMaxRequest';
 import { promisify } from 'util';
-import { variables } from '../../_shared/Util/Constants';
+import { constants } from '../../_shared/Util/Constants';
 import { People } from '../../_shared/DTO/StarWarsResponse';
 import { TypeaheadResponse } from '../../_shared/DTO/MixMaxResponse';
 

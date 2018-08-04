@@ -7,7 +7,7 @@ const {
 const MIXMAX_URL = 'https://compose.mixmax.com';
 
 // tslint:disable-next-line:variable-name
-export const variables = {
+export const constants = {
   MIXMAX_URL,
   BASE_URL: 'https://swapi.co/api/people/',
   DEFAULT_TIMEOUT: 4000,
