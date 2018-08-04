@@ -7,7 +7,7 @@ const {
   default: { get },
 } = ax;
 
-const defaultTimeout = 100;
+const defaultTimeout = 2000;
 const errorTimeout = (reject, urlRequest: string) =>
   reject(new Error(`timeout at [${urlRequest}] :(`));
 
@@ -17,11 +17,13 @@ export class Request<T> {
       setTimeout(() => errorTimeout(reject, fnName), defaultTimeout),
     );
   }
+
   race(urlRequest: string, promiseFn: Function): AxiosPromise<T> {
     return <AxiosPromise<T>>(
       Promise.race([promiseFn(), this.raceTimeoutDelay(urlRequest)])
     );
   }
+
   get<T>(url, params?) {
     return this.race(url, () => get<T>(url, { params }));
   }
