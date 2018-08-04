@@ -10,7 +10,7 @@ const MIXMAX_URL = 'https://compose.mixmax.com';
 export const variables = {
   MIXMAX_URL,
   BASE_URL: 'https://swapi.co/api/people/',
-  DEFAULT_TIMEOUT: 2000,
+  DEFAULT_TIMEOUT: 4000,
   DEFAULT_RESPONSE: {
     statusCode: 200,
     body: null,

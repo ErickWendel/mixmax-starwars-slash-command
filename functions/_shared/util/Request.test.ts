@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { variables } from './../Util/Constants';
+import { variables } from './../util/Constants';
 import { Request } from './Request';
 
 const timeout = variables.DEFAULT_TIMEOUT;
