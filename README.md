@@ -8,7 +8,7 @@ For a more complex example using multi-word search, see [Soundcloud command](htt
 
 ## Testing
 1. `npm test`
-## Development URLs
+## Endpoints
   `GET` - https://a2dd4hapxd.execute-api.us-east-1.amazonaws.com/prod/resolver <br/>
   `GET` - https://a2dd4hapxd.execute-api.us-east-1.amazonaws.com/prod/typeahead
  
