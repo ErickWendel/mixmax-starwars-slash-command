@@ -1,42 +1,35 @@
 import { APIGatewayEvent, Callback, Context, Handler } from 'aws-lambda';
 import { Typeahead } from './src/Typeahead';
-import { UTIL } from '../_shared/Util';
+import { util } from './../_shared/Util';
+
+const handler = async ({ queryStringParameters }) => {
+  console.log('event.queryStringParameters', queryStringParameters);
+  if (!queryStringParameters) {
+    return util.envirounment.DEFAULT_RESPONSE_ENTER_SEARCH_TERM;
+  }
+
+  const text = queryStringParameters.text || queryStringParameters;
+  const result = await Typeahead.resolve(text);
+
+  return result;
+};
 
 export const hello: Handler = (
   event: APIGatewayEvent,
   context: Context,
   cb: Callback,
 ) => {
-  // console.log('**EVENT', event);
-  console.log('event.queryStringParameters', event.queryStringParameters);
-  // if (!event.queryStringParameters) {
-  //   return cb(null, {
-  //     body: JSON.stringify([
-  //       {
-  //         title: '<i>(enter a search term)</i>',
-  //         text: '',
-  //       },
-  //     ]),
-  //   });
-  // }
+  console.log('**EVENT', event);
 
-  // const text = event.queryStringParameters.text || event.queryStringParameters;
-  Typeahead.resolve('r2d2')
-
+  handler(event)
     .then((result: any) => {
       const response = {
-        statusCode: 200,
-        // ...UTIL.DEFAULT_RESPONSE,
         body: JSON.stringify(result),
-        headers: {
-          'Access-Control-Allow-Origin': 'https://compose.mixmax.com',
-          'Access-Control-Allow-Credentials': true,
-        },
+        ...util.envirounment.DEFAULT_RESPONSE,
       };
 
-      return cb(null, response);
+      return cb(null, result);
     })
-
     .catch((error: any) => {
       console.error('****ERROR', error);
       return cb(new Error('Something error happens :('));

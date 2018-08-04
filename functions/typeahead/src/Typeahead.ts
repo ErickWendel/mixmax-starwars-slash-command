@@ -1,19 +1,11 @@
-import * as ax from 'axios';
-const { get } = ax.default;
 import { Response } from '../../_shared/StarWarsResponse';
+import { util } from '../../_shared/Util';
+import { Request } from '../../_shared/Request';
+const request = new Request<Response>();
 
 export class Typeahead {
   static async resolve(term) {
-    if (!term) {
-      return Promise.resolve([
-        {
-          title: '<i>(enter a search term)</i>',
-          text: '',
-        },
-      ]);
-    }
-
-    const { data } = await get<Response>(
+    const { data } = await request.get(
       `https://swapi.co/api/people/?search=${term}&format=json`,
     );
 
