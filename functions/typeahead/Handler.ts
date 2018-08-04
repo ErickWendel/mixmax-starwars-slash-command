@@ -1,12 +1,12 @@
 import { APIGatewayEvent, Callback, Context, Handler } from 'aws-lambda';
 import { Typeahead } from './src/Typeahead';
-import { util } from './../_shared/Util/Util';
+import { variables } from './../_shared/Util/Constants';
 // import { MixMaxRequest } from '../_shared/MixMaxRequest';
 
 const handler = async ({ queryStringParameters }) => {
   console.log('event.queryStringParameters', queryStringParameters);
   if (!queryStringParameters || !queryStringParameters.text) {
-    return util.DEFAULT_RESPONSE_ENTER_SEARCH_TERM;
+    return variables.DEFAULT_RESPONSE_ENTER_SEARCH_TERM;
   }
 
   const text = queryStringParameters.text || queryStringParameters;
@@ -25,7 +25,7 @@ export const main: Handler = (
   handler(event)
     .then((result: any) => {
       const response = {
-        ...util.DEFAULT_RESPONSE,
+        ...variables.DEFAULT_RESPONSE,
         body: JSON.stringify(result),
       };
       console.log('**RESULT', result);

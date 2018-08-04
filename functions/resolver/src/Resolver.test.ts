@@ -2,7 +2,7 @@ import * as assert from 'assert';
 import { Resolver } from './Resolver';
 import { MixMaxRequest } from '../../_shared/DTO/MixMaxRequest';
 import { promisify } from 'util';
-import { util } from '../../_shared/Util/Util';
+import { variables } from '../../_shared/Util/Constants';
 import { People } from '../../_shared/DTO/StarWarsResponse';
 import { ResolverResponse } from '../../_shared/DTO/MixMaxResponse';
 

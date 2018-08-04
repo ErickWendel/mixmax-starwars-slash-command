@@ -1,4 +1,4 @@
-import { util } from '../../_shared/Util/Util';
+import { variables } from '../../_shared/Util/Constants';
 
 import { Request } from '../../_shared/util/Request';
 const request = new Request<Response>();
