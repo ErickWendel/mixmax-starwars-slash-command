@@ -1,6 +1,6 @@
 import { util } from '../../_shared/Util/Util';
 
-import { Request } from '../../_shared/Util/Request';
+import { Request } from '../../_shared/util/Request';
 const request = new Request<Response>();
 import { Response } from '../../_shared/DTO/StarWarsResponse';
 

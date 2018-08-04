@@ -5,8 +5,7 @@ import { ResolverResponse } from '../../_shared/DTO/MixMaxResponse';
 export class Resolver {
   static toHtmlTemplate(item: People) {
     const defaultAvatar =
-      // tslint:disable-next-line:max-line-length
-      'https://i2.wp.com/staging.nathaliesstudio.com/app/themes/nathaliesstudio-sage/dist/images/default-avatar-lrg.png';
+      'https://www.geek.com/wp-content/uploads/2018/01/star-wars-625x352.jpg';
 
     return [
       `<br/><img src="${defaultAvatar}" />`,
