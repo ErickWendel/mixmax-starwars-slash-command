@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { util } from './Util';
+import { util } from './../util/Util';
 import { Request } from './Request';
 
 const timeout = util.DEFAULT_TIMEOUT;

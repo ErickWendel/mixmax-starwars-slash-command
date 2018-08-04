@@ -5,7 +5,6 @@ import { promisify } from 'util';
 import { util } from '../../_shared/Util/Util';
 import { People } from '../../_shared/DTO/StarWarsResponse';
 import { ResolverResponse } from '../../_shared/DTO/MixMaxResponse';
-// const mainAsync = promisify(main as Function);
 
 const queryStringParameters: MixMaxRequest = {
   text: 'r2',

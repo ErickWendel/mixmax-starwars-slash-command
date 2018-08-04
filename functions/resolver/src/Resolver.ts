@@ -1,6 +1,6 @@
 import { StarWarsService } from '../../_shared/service/StarWarsService';
 import { People } from '../../_shared/DTO/StarWarsResponse';
-import { ResolverResponse } from '../../_shared/Util/MixMaxResponse';
+import { ResolverResponse } from '../../_shared/DTO/MixMaxResponse';
 
 export class Resolver {
   static toHtmlTemplate(item: People) {
