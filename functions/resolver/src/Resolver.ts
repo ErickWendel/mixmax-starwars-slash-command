@@ -1,6 +1,7 @@
 import { StarWarsService } from '../../_shared/service/StarWarsService';
 import { People } from '../../_shared/DTO/StarWarsResponse';
 import { ResolverResponse } from '../../_shared/DTO/MixMaxResponse';
+import { variables } from '../../_shared/util/Constants';
 
 export class Resolver {
   static toHtmlTemplate(item: People) {
@@ -10,15 +11,22 @@ export class Resolver {
     return [
       `<br/><img src="${defaultAvatar}" />`,
       `<br/><strong>Name</strong>: ${item.name}`,
-    ].join();
+      `<br/><strong>Gender</strong>: ${item.gender}`,
+    ].join('');
   }
   static async resolve(term): Promise<ResolverResponse> {
     const { results } = await StarWarsService.getPeople(term);
 
+    if (!results.length) {
+      return {
+        body: variables.DEFAULT_RESPONSE_NOT_FOUND_ITEM.map(
+          item => item.title,
+        ).join(''),
+      };
+    }
     const html = results
       .map(this.toHtmlTemplate)
       .reduce((prev, next) => prev.concat(next), '');
-
     return { body: html };
   }
 }

@@ -36,7 +36,7 @@ describe('Resolver mappings ', function() {
   it('should contain the R2-D2 name and HTML template when passed r2', async () => {
     const { text } = queryStringParameters;
     const expected = {
-      body: Resolver.toHtmlTemplate(<People>{ name: 'R2-D2' }),
+      body: Resolver.toHtmlTemplate(<People>{ name: 'R2-D2', gender: 'n/a' }),
     };
 
     assert.deepEqual(apiResult, expected);
