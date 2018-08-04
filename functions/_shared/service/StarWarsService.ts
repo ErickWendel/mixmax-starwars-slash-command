@@ -1,4 +1,4 @@
-import { variables } from '../../_shared/Util/Constants';
+import { variables } from '../../_shared/util/Constants';
 import { Response } from '../../_shared/DTO/StarWarsResponse';
 import { Request } from '../../_shared/util/Request';
 const request = new Request<Response>();
