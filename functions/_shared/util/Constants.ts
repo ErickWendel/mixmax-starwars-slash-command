@@ -1,8 +1,4 @@
-import * as ax from 'axios';
-import { Response } from './../DTO/StarWarsResponse';
-const {
-  default: { get },
-} = ax;
+import { TypeaheadResponse } from '../DTO/MixMaxResponse';
 
 const MIXMAX_URL = 'https://compose.mixmax.com';
 
@@ -20,13 +16,13 @@ export const constants = {
     },
   },
   DEFAULT_RESPONSE_ENTER_SEARCH_TERM: [
-    {
+    <TypeaheadResponse>{
       title: '<i>(enter a search term)</i>',
       text: '',
     },
   ],
   DEFAULT_RESPONSE_NOT_FOUND_ITEM: [
-    {
+    <TypeaheadResponse>{
       title: '<i>(no results)</i>',
       text: '',
     },
