@@ -26,7 +26,7 @@ describe('Resolver mappings ', function() {
     assert.ok(typeof apiResult.body === 'string');
   });
 
-  it('should have an HTML text least 4 characters', async () => {
+  it('should have an HTML text at least 4 characters', async () => {
     assert.ok(apiResult.body.length > 4);
   });
 
@@ -36,9 +36,10 @@ describe('Resolver mappings ', function() {
   it('should contain the R2-D2 name and HTML template when passed r2', async () => {
     const { text } = queryStringParameters;
     const expected = {
-      body: Resolver.toHtmlTemplate(<People>{ name: 'R2-D2', gender: 'n/a' }),
+      body:
+        // tslint:disable-next-line:max-line-length
+        '<br/><img src="https://www.geek.com/wp-content/uploads/2018/01/star-wars-625x352.jpg" width="300" /><br/><strong>Name</strong>: R2-D2<br/><strong>Gender</strong>: n/a',
     };
-
     assert.deepEqual(apiResult, expected);
   });
 });
